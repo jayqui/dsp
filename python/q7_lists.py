@@ -2,20 +2,17 @@
 # Licensed under the Apache License, Version 2.0
 
 
+"""
+Given a list of strings, return the count of the number of strings
+where the string length is 2 or more and the first and last chars
+of the string are the same.
+"""
 def match_ends(words):
-    """
-    Given a list of strings, return the count of the number of strings
-    where the string length is 2 or more and the first and last chars
-    of the string are the same.
-
-    >>> match_ends(['aba', 'xyz', 'aa', 'x', 'bbb'])
-    3
-    >>> match_ends(['', 'x', 'xy', 'xyx', 'xx'])
-    2
-    >>> match_ends(['aaa', 'be', 'abc', 'hello'])
-    1
-    """
-    raise NotImplementedError
+    count = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            count += 1
+    return count
 
 
 def front_x(words):
@@ -86,3 +83,20 @@ def linear_merge(list1, list2):
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
     raise NotImplementedError
+
+# TESTS
+
+# match_ends()
+print(
+    "match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']) == 3",
+    match_ends(['aba', 'xyz', 'aa', 'x', 'bbb']) == 3
+)
+print(
+    "match_ends(['', 'x', 'xy', 'xyx', 'xx']) == 2",
+    match_ends(['', 'x', 'xy', 'xyx', 'xx']) == 2
+)
+print(
+    "match_ends(['aaa', 'be', 'abc', 'hello']) == 1",
+    match_ends(['aaa', 'be', 'abc', 'hello']) == 1
+)
+print()
